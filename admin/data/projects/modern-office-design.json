@@ -1,0 +1,18 @@
+{
+  "title": "Modern Office Design",
+  "description": "A contemporary office space designed for productivity and collaboration.",
+  "image": "images/projects/lat-pro-1.jpg",
+  "gallery": [
+    {
+      "image": "images/projects/lat-pro-1.jpg"
+    },
+    {
+      "image": "images/projects/lat-pro-2.jpg"
+    },
+    {
+      "image": "images/projects/lat-pro-3.jpg"
+    }
+  ],
+  "date": "2023-06-15T00:00:00Z",
+  "category": "Commercial"
+}

@@ -1,0 +1,101 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "/"
+    extension: "html"
+    create: false
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "admin/data/settings.json"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string"}
+          - {label: "Tagline", name: "tagline", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - {label: "Footer Text", name: "footer_text", widget: "string"}
+
+  - name: "team"
+    label: "Team Members"
+    folder: "admin/data/team/"
+    extension: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Photo", name: "photo", widget: "image"}
+      - {label: "Social Media", name: "social", widget: "list", fields: [
+          {label: "Platform", name: "platform", widget: "string"},
+          {label: "URL", name: "url", widget: "string"}
+        ]}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "admin/data/projects/"
+    extension: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "string"}
+
+  - name: "services"
+    label: "Services"
+    folder: "admin/data/services/"
+    extension: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Icon", name: "icon", widget: "string"}
+      - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "admin/data/testimonials/"
+    extension: "json"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Position", name: "position", widget: "string"}
+      - {label: "Company", name: "company", widget: "string"}
+      - {label: "Quote", name: "quote", widget: "text"}
+      - {label: "Photo", name: "photo", widget: "image"}
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "admin/data/blog/"
+    extension: "json"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}}
+      - {label: "Featured Image", name: "image", widget: "image"}

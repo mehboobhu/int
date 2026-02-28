@@ -1,0 +1,20 @@
+{
+  "name": "John Doe",
+  "position": "Senior Designer",
+  "bio": "John has over 10 years of experience in interior design and has worked on numerous high-profile projects.",
+  "photo": "images/team/v2-1.jpg",
+  "social": [
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/johndoe"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/johndoe"
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/johndoe"
+    }
+  ]
+}
